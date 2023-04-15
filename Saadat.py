@@ -106,53 +106,6 @@ $$ |  $$ |$$ |  $$ |$$ |\$$$ |  $$ |
 \$$$$$$  |$$ |  $$ |$$ | \$$ |$$$$$$\ 
  \______/ \__|  \__|\__|  \__|\______|
                                  
-                                      
-"""%(O))
-
-def reg():
-    os.system('clear')
-    logo()
-    print ('')
-    print (' Checking Approval')
-    time.sleep(1) 
-    try:
-        to = open('/sdcard/Android/.Saadat.txt', 'r').read()
-    except (KeyError, IOError):
-        reg2()
-    r = requests.get('https://raw.githubusercontent.com/Haroon JaNi/Haroon JaNi/main/Haroon jaNi.txt').text
-    if to in r:
-        time.sleep(2)
-        bsn_menu()
-    else:
-        os.system('clear')
-        logo()
-        print('')
-        print ('\tApproved Not Detected')
-        print ('')
-        print (' \033[1;97mToken: ' + to)
-        print(' WhatsApp : +93702856593')
-        input('\033[1;97m Press Enter To Send Token')
-        os.system('xdg-open https://wa.me/+93702856593?text=Assalamualaikum Sir Approve my Token and my Token :'+to)
-        reg()
-
-def reg2():
-    os.system('clear')
-    logo()
-    print('')
-    print ('\tApproval Not Detected')
-    print('')
-    id = uuid.uuid4().hex[:50]
-    print (' Token : ' + id)
-    print(' WhatsApp : +93776811468')
-    input(' Press Enter To Send Token ')
-    os.system('xdg-open https://wa.me/+93702856593?text=Assalamualaikum Sir Approve my Token and my Token :'+id)
-    sav = open('/sdcard/Android/.Saadat.txt', 'w')
-    sav.write(id)
-    sav.close()
-    reg()
-
-
-
 #MASUK TOKEN
 def chigozie():
     os.system('clear')
@@ -200,7 +153,7 @@ def bsn_menu():
     print(" [*]. Tysm To My All Frendz. (Saadat)");time.sleep (0.03)
     print(" [*] -----------------------------------------------------------------------------------");time.sleep (0.03)
     print(" [*]. VERSION  3.0                                    ");time.sleep (0.03)   
-    print(" [*]. WP             +93776811468      ");time.sleep (0.03)
+    print(" [*]. WP             +93702856593      ");time.sleep (0.03)
     print(" [*]. This Tool was made in Saadat              ");time.sleep (0.03)
     print(" [*] -----------------------------------------------------------------------------------");time.sleep (0.03)
     print(".[*] ---------------------------------------------");time.sleep(0.03)
