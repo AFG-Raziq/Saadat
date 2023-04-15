@@ -244,6 +244,7 @@ class __bsn__:
         print(' -------------------------------------------')
         print('')
         os.system('clear')
+        
         logo()
         print("")
         ___worldwide___ = ('y')
