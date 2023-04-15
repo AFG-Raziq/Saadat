@@ -225,7 +225,7 @@ def bsn_menu():
 class __bsn__:
 
     def __init__(self):
-        self.id = ['3;03']
+        self.id = ['3','03]
 
     def bilo(self,id):
         os.system('clear')
@@ -236,15 +236,6 @@ class __bsn__:
         self.cnt = input('%s [+] file name :%s '%(A,F))
         self.id = open(self.cnt).read().splitlines()
         os.system('clear')
-        
-        def inti(self,id):
-        os.system('clear')
-        logo()
-        print("              AFG Random crack menu")
-        print(' -------------------------------------------')
-        print('')
-        os.system('clear')
-        
         logo()
         print("")
         ___worldwide___ = ('y')
