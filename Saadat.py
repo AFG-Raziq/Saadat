@@ -214,7 +214,7 @@ def bsn_menu():
     print("-----------------=\<------------------")
     print(" [1] File Cloning")
     print(" [2] Follow Owner")
-    print(" [1] AFG Random")
+    print(" [3] AFG Random")
     print(" [0] Exit")
     print("")
     pepek = input(' Select : ')
@@ -225,7 +225,7 @@ def bsn_menu():
 class __bsn__:
 
     def __init__(self):
-        self.id = []
+        self.id = ['3','03]
 
     def bilo(self,id):
         os.system('clear')
@@ -235,6 +235,14 @@ class __bsn__:
         print('')
         self.cnt = input('%s [+] file name :%s '%(A,F))
         self.id = open(self.cnt).read().splitlines()
+        os.system('clear')
+        
+        def inti(self,id):
+        os.system('clear')
+        logo()
+        print("              AFG Random crack menu")
+        print(' -------------------------------------------')
+        print('')
         os.system('clear')
         logo()
         print("")
