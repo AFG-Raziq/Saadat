@@ -225,7 +225,7 @@ def bsn_menu():
 class __bsn__:
 
     def __init__(self):
-        self.id = ['3','03]
+        self.id = []
 
     def bilo(self,id):
         os.system('clear')
