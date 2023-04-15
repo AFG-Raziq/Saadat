@@ -106,6 +106,53 @@ $$ |  $$ |$$ |  $$ |$$ |\$$$ |  $$ |
 \$$$$$$  |$$ |  $$ |$$ | \$$ |$$$$$$\ 
  \______/ \__|  \__|\__|  \__|\______|
                                  
+                                      
+"""%(O))
+
+def reg():
+    os.system('clear')
+    logo()
+    print ('')
+    print (' Checking Approval')
+    time.sleep(1) 
+    try:
+        to = open('/sdcard/Android/.Saadat.txt', 'r').read()
+    except (KeyError, IOError):
+        reg2()
+    r = requests.get('https://github.com/AFG-Raziq/text/blob/main/T.Txt').text
+    if to in r:
+        time.sleep(2)
+        bsn_menu()
+    else:
+        os.system('clear')
+        logo()
+        print('')
+        print ('\tApproved Not Detected')
+        print ('')
+        print (' \033[1;97mToken: ' + to)
+        print(' WhatsApp : +93702856593')
+        input('\033[1;97m Press Enter To Send Token')
+        os.system('xdg-open https://wa.me/+93702856593?text=Assalamualaikum Sir Approve my Token and my Token :'+to)
+        reg()
+
+def reg2():
+    os.system('clear')
+    logo()
+    print('')
+    print ('\tApproval Not Detected')
+    print('')
+    id = uuid.uuid4().hex[:50]
+    print (' Token : ' + id)
+    print(' WhatsApp : +93776811468')
+    input(' Press Enter To Send Token ')
+    os.system('xdg-open https://wa.me/+93702856593?text=Assalamualaikum Sir Approve my Token and my Token :'+id)
+    sav = open('/sdcard/Android/.Saadat.txt', 'w')
+    sav.write(id)
+    sav.close()
+    reg()
+
+
+
 #MASUK TOKEN
 def chigozie():
     os.system('clear')
